@@ -1,0 +1,14 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /var/log/flight_radar/flight_radar*.log  #Chemin à l'intérieur du conteneur Docker
+  json:
+    keys_under_root: true
+    overwrite_keys: true
+
+output.logstash:
+  hosts: ["logstash:5044"]
+
+
+
